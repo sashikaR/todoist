@@ -1,5 +1,6 @@
 package com.assurity.api.test.v1;
 
+import com.assurity.api.test.data.BaseData;
 import com.assurity.api.test.dataobjects.v1.CarbonCredits;
 import com.assurity.api.test.functions.HeaderRequest;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -13,30 +14,33 @@ import org.testng.asserts.SoftAssert;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Properties;
 
+import static com.assurity.api.test.data.BaseData.ACCEPT;
+import static com.assurity.api.test.data.BaseData.Accept.ACCEPT_JSON;
+import static com.assurity.api.test.data.BaseData.CONTENT_TYPE;
+import static com.assurity.api.test.data.BaseData.Content.CONTENT_JSON;
 import static com.assurity.api.test.functions.ServiceOperations.getData;
+import static com.assurity.api.test.utility.PropertyReader.propertyReader;
 
 public class CarbonCreditsV1Test {
 
     @Test(testName = "CARBONCREDIT_V1_API_001", description = "Get And Validate Carbon Credits V1 API Response", priority = 1, suiteName = "Regression")
     private void getAndValidateCarbonCreditsDataRequest() throws JsonProcessingException, InterruptedException {
 
-         String apiUrl ="http://api.tmsandbox.co.nz/v1/Categories/6327/Details.json";
-
+        Properties testProperties = propertyReader();
         ObjectMapper objectMapper = new ObjectMapper().configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, true);
-
         SoftAssert softAssert = new SoftAssert();
-
 
         Map<String,String> queryParam=new HashMap<String, String>();
         queryParam.put("catalogue","false");
 
         HeaderRequest headerRequest = new HeaderRequest();
-        headerRequest.setHeaders("Content-Type", "application/json");
-        headerRequest.setHeaders("Accept", "application/json");
+        headerRequest.setHeaders(CONTENT_TYPE, CONTENT_JSON.toString());
+        headerRequest.setHeaders(ACCEPT, ACCEPT_JSON.toString());
         RequestSpecification httpRequest = headerRequest.createHeaderRequest();
 
-        Response getResponseCarbonCredit = getData(httpRequest.body("").params(queryParam), apiUrl);
+        Response getResponseCarbonCredit = getData(httpRequest.body("").params(queryParam), testProperties.getProperty("api_url"));
         softAssert.assertEquals(getResponseCarbonCredit.getStatusCode(), 200);
 
         CarbonCredits getCarbonCreditApiResponse = objectMapper.readValue(getResponseCarbonCredit.getBody().asString(), CarbonCredits.class);
