@@ -1,4 +1,4 @@
-# Tmsandbox API Test Framework
+# ToDoist API Test Automation Framework
 
 ## Prerequsits
 1. Java JDK - openjdk version "1.8.0_262"
@@ -6,12 +6,14 @@
 
 ## How to execute test-run
 
-cd <project-dir>
+clone the git project.
+
+cd (project-dir)
+  
 mvn clean install
 
 ## Test Report Access
+
 Test report will be generated in below location
   
-<project-dir>/target/surefire-reports/html/index.html
-
-### Sample Test Report
+(project-dir)/test-output/ToDoList-API-TestReport.html
