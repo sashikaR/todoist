@@ -1,0 +1,17 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="ToDoList API Regression Suite">
+
+    <listeners>
+        <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+    </listeners>
+
+    <test name="TestProjectCreate" parallel="classes" thread-count="1">
+        <classes>
+            <class name="com.todolist.api.test.TestProjectCreate"></class>
+            <class name="com.todolist.api.test.TestProjectTaskCreate"></class>
+            <class name="com.todolist.api.test.TestProjectTaskUpdate"></class>
+        </classes>
+    </test>
+</suite>

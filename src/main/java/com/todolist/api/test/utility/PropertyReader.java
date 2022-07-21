@@ -1,4 +1,4 @@
-package com.assurity.api.test.utility;
+package com.todolist.api.test.utility;
 
 import lombok.extern.log4j.Log4j2;
 

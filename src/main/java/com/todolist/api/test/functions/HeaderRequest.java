@@ -1,4 +1,4 @@
-package com.assurity.api.test.functions;
+package com.todolist.api.test.functions;
 
 import io.restassured.RestAssured;
 import io.restassured.config.EncoderConfig;

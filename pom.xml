@@ -2,10 +2,10 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.assurity.api.test</groupId>
-  <artifactId>tmsandbox-api</artifactId>
+  <artifactId>todo-api</artifactId>
   <packaging>jar</packaging>
   <version>1.0-SNAPSHOT</version>
-  <name>tmsandbox-api</name>
+  <name>todo-api</name>
   <url>http://maven.apache.org</url>
   <dependencies>
     <!-- https://mvnrepository.com/artifact/org.testng/testng -->
@@ -52,6 +52,11 @@
       <artifactId>log4j-core</artifactId>
       <version>2.17.1</version>
     </dependency>
+    <dependency>
+      <groupId>com.aventstack</groupId>
+      <artifactId>extentreports</artifactId>
+      <version>3.1.5</version>
+    </dependency>
   </dependencies>
 
   <build>
@@ -74,7 +79,7 @@
           <systemPropertyVariables>
           </systemPropertyVariables>
           <suiteXmlFiles>
-            <suiteXmlFile>src/test/java/com/assurity/api/runners/Regression.xml</suiteXmlFile>
+            <suiteXmlFile>src/test/java/com/todolist/api/runners/Regression.xml</suiteXmlFile>
           </suiteXmlFiles>
         </configuration>
       </plugin>

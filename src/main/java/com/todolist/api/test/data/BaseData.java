@@ -1,8 +1,9 @@
-package com.assurity.api.test.data;
+package com.todolist.api.test.data;
 
 public class BaseData {
     public static final String CONTENT_TYPE = "Content-Type";
     public static final String ACCEPT = "Accept";
+    public static final String AUTHORIZATION = "Authorization";
 
     //Header Data - Enums
     public enum Content {
