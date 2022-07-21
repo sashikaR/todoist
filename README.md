@@ -12,4 +12,4 @@ mvn clean install
 ## Test Report Access
 Test report will be generated in below location
   
-<project-dir>/test-output/ToDoList-API-TestReport.html
+/<project-dir>/test-output/ToDoList-API-TestReport.html
