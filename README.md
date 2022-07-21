@@ -6,7 +6,7 @@
 
 ## How to execute test-run
 
-cd <project-dir>  
+cd <<project-dir>>
   
 mvn clean install
 
@@ -14,4 +14,4 @@ mvn clean install
 
 Test report will be generated in below location
   
-/<project-dir>/test-output/ToDoList-API-TestReport.html
+/<<project-dir>>/test-output/ToDoList-API-TestReport.html
